@@ -9,7 +9,7 @@ import UIKit
 import FirebaseAuth
 import Firebase
 
-class ViewController: UIViewController {
+class PasswordlessViewController: UIViewController {
     var score = 0
     var password = "Password"
     var email = "123@gmail.com"

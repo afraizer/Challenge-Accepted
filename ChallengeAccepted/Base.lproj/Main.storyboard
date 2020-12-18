@@ -8,10 +8,39 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Table View Controller-->
+        <scene sceneID="eW1-fy-ffD">
+            <objects>
+                <tableViewController id="dkI-Dl-mdG" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="GVr-yp-njl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="FVP-zC-1yY">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FVP-zC-1yY" id="XIe-56-Y9b">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="dkI-Dl-mdG" id="atM-SN-ftL"/>
+                            <outlet property="delegate" destination="dkI-Dl-mdG" id="ZwM-SQ-pjH"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="w19-JY-rci"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J5M-Vk-MVz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-848" y="96"/>
+        </scene>
+        <!--Passwordless View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ChallengeAccepted" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="PasswordlessViewController" customModule="ChallengeAccepted" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -68,6 +97,7 @@
                                         <rect key="frame" x="0.0" y="182.5" width="382" height="30"/>
                                         <state key="normal" title="Log In"/>
                                         <connections>
+                                            <action selector="LoginButton:" destination="Wg7-bm-RDV" eventType="touchUpInside" id="tXO-Yk-N3w"/>
                                             <action selector="LoginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zyq-cL-Rtq"/>
                                         </connections>
                                     </button>
@@ -85,11 +115,13 @@
                     <connections>
                         <outlet property="emailField" destination="ryL-NB-TbB" id="ea0-Cc-Z98"/>
                         <outlet property="passwordField" destination="xWV-62-byS" id="h3q-hR-9e4"/>
+                        <segue destination="dkI-Dl-mdG" kind="show" identifier="toTableVC" id="MKd-v6-CDA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="Wg7-bm-RDV" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="18.840579710144929" y="77.678571428571431"/>
+            <point key="canvasLocation" x="-1655" y="96"/>
         </scene>
     </scenes>
     <resources>
