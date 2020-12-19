@@ -7,6 +7,7 @@ target 'ChallengeAccepted' do
 
   # Pods for FirebaseiOSFall2020
   pod 'Firebase/Analytics'
+  pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift'
