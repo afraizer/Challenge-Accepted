@@ -60,7 +60,8 @@ class PasswordlessViewController: UIViewController {
                 }
                 else {
                     let db = Firestore.firestore()
-                    db.collection("users").addDocument(data: ["score":0, "uid": result!.user.uid]) { (error) in
+                    db.collection("users").document("user").setData(["score": 0 , "uid": result!.user.uid
+                    ]) { (error) in
                         if error != nil {
                             self.showError("user data couldn't be saved")
                         }
@@ -80,7 +81,7 @@ class PasswordlessViewController: UIViewController {
     // takes a string and checks if it is a valid password
     static func isPasswordValid(_ password : String) -> Bool {
         
-        let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}")
+        let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[$@$#!%*?&])(?=.*[0-9])(?=.*[A-Z]).{8,}$")
         return passwordTest.evaluate(with: password)
     }
     
